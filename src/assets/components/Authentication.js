@@ -9,22 +9,15 @@ function Auth (props) {
     const [valueVerifiCode, setValueVerifiCode] = useState("");
 
     // cout down
-    const [count, setCount] = useState(120);
-    
     useEffect(() => {
-        setTimeout(() => {if (count != 0) setCount(count - 1)}, 1000);
-    }, [count]);
+        setTimeout(() => {if (props.count != 0) props.setCount(props.count - 1)}, 1000);
+        console.log(props.count);
+    }, [props.count]);
 
 
 
 
     function authCode (VerifiCode) {
-
-        if (VerifiCode == null) {
-            console.log("Mã code sai");
-            return;
-        }
-
         console.log(VerifiCode);
 
         let firebaseAuth = props.firebasePhone;
@@ -58,7 +51,7 @@ function Auth (props) {
                     authCode(valueVerifiCode);
                 }}>Xác Nhận</button>
                 <div className="div-input-code">
-                    <a href="#" className="count">Gửi lại mã</a> <span style={{fontSize: "17px"}}> {count != 0 ? count : ""} </span>
+                    <a href="#" className="count">Gửi lại mã</a> <span style={{fontSize: "17px"}}> {props.count != 0 ? props.count : ""} </span>
                 </div>
                 <button className="btn-back" type="button" onClick={() => {
                     props.setStyleLogin({...props.styleLogin, display: "flex"});

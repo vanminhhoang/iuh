@@ -13,6 +13,7 @@ function Login (props) {
         //Nếu sdt ko đúng định dạng
         if(!vnf_regex.test(valueP)) {
             props.setStyleSM({...props.styleSM, display: "flex"});
+            props.setValueMsg("Số điện thoại không hợp lệ, vui lòng nhập lại một số điện thoại gồm 10 số!")
             return ;
         }
 
@@ -54,6 +55,7 @@ function Login (props) {
                 props.setFirebasePhone(firebaseAuth);
                 props.setStyleLogin({...props.styleLogin, display: "none"});
                 props.setStyleAuth({...props.styleAuth, display: "flex"});
+                props.setCount(120);
             }
         })
         .catch(error => console.error("Error: ", error))
@@ -70,13 +72,13 @@ function Login (props) {
                 <div className="div-img">
                     <img src={icon_main_iuh} alt="IUH"/>
                 </div>
-                <div class="div-label-text">Xin chào IUHer!</div>
-                <div class="div-label-sdt">Số điện thoại</div>
-                <div class="div-input">
-                    <span class="text-phone">+84</span>
+                <div className="div-label-text">Xin chào IUHer!</div>
+                <div className="div-label-sdt">Số điện thoại</div>
+                <div className="div-input">
+                    <span className="text-phone">+84</span>
                     <input value={valueP} onChange={(e) => setValueP(e.target.value)} className="input-phone-number" autocomplete="off" name="phone" placeholder="0833963029"/>
                 </div>
-                <button class="btn-next" onClick={() => CheckPhone(valueP)}>Tiếp tục</button>
+                <button className="btn-next" onClick={() => CheckPhone(valueP)}>Tiếp tục</button>
                 <div id="recaptcha-container"></div>
             </div>
         </div>

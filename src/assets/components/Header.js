@@ -18,13 +18,16 @@ import InputPass from './InputPassword';
 
 
 function Header() {
+
+  const [count, setCount] = useState();
+
   const [valuePassDK, setValuePassDK] = useState("");
 
   const [firebasePhone, setFirebasePhone] = useState();
 
   const [valuePhone, setValuePhone] = useState("");
 
-  const [valueMsgErr, setValueMsgErr] = useState("Số điện thoại không hợp lệ, vui lòng nhập lại một số điện thoại gồm 10 số!");
+  const [valueMsgErr, setValueMsgErr] = useState("");
   
   const [styleDisplayInputPass, setStyleDisplayInputPass] = useState({
     display: "none"
@@ -126,12 +129,15 @@ function Header() {
           styleBGLogin={styleDisplayBackgroundLogin} setStyleBGLogin={setStyleDisplayBackgroundLogin}
           styleSM={styleDisplayMessageErr}  setStyleSM={setStyleDisplayMessageErr}
           setValueNum={setValuePhone} 
+          setValueMsg={setValueMsgErr}
+          setCount={setCount}
           setFirebasePhone={setFirebasePhone}
           styleAuth={styleDisplayAuth} setStyleAuth={setStyleDisplayAuth}
           styleInputPass={styleDisplayInputPass} setStyleInputPass={setStyleDisplayInputPass}/>
         <ShowMessageErr styleSME={styleDisplayMessageErr} setStyleSME={setStyleDisplayMessageErr}
           value={valueMsgErr}/>
         <Authentication valueNum={valuePhone}
+          count={count} setCount={setCount}
           styleAuth={styleDisplayAuth} setStyleAuth={setStyleDisplayAuth}
           styleLogin={styleDisplayLogin} setStyleLogin={setStyleDisplayLogin}
           stylePass={styleDisplayPassword} setStylePass={setStyleDisplayPassword}
@@ -150,11 +156,11 @@ function Header() {
           styleLogin={styleDisplayLogin} setStyleLogin={setStyleDisplayLogin}
           styleAuth={styleDisplayAuth} setStyleAuth={setStyleDisplayAuth}
           valueNum={valuePhone}
-          setFirebasePhone={setFirebasePhone}/>
+          setFirebasePhone={setFirebasePhone}
+          styleSME={styleDisplayMessageErr} setStyleSME={setStyleDisplayMessageErr}
+          setValueMsgErr={setValueMsgErr}
+          count={count} setCount={setCount}/>
       </div>
-
-
-      
     </header>  
   );
 }

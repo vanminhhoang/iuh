@@ -26,6 +26,7 @@ function InputPass (props) {
         props.setFirebasePhone(firebaseAuth);
         props.setStyleInputPass({...props.styleInputPass, display: "none"});
         props.setStyleAuth({...props.styleAuth, display: "flex"});
+        props.setCount(120);
     }
 
     function submit (value) {
@@ -55,6 +56,8 @@ function InputPass (props) {
                 
             } else {
                 console.log("Đăng nhập thất bại");
+                props.setValueMsgErr("Bạn nhập sai mật khẩu!");
+                props.setStyleSME({...props.styleSME, display: "flex"});
             }
         })
         .catch(error => console.error("Error: ", error))

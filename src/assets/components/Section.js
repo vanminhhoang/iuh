@@ -10,7 +10,7 @@ import 'owl.carousel/dist/assets/owl.theme.default.min.css';
 
 
 function Section() {
-    const [arrImgValue, setArrImgValue] = useState([]);    
+    const [arrImgValue, setArrImgValue] = useState([]);  
 
     useEffect(() => {
         if (window.fetch) {
@@ -26,16 +26,14 @@ function Section() {
                     console.log(arrImgValue); 
                 })
                 .catch(error => console.log("Lỗi" + error))
-
-
+                
         } else {
             console.log("Fetch not found");
         }
     }, [arrImgValue]);
 
     
-    
-    var listImg = [];
+    var listImg = []; 
     for (var i = 0; i < arrImgValue.length; ++i) {
         listImg[i] = arrImgValue[i].image;
         console.log(listImg[i]);
@@ -71,7 +69,6 @@ function Section() {
                         <a href="https://play.google.com/store" target="_blank" className="link-chplay">
                             <img src={ggplay} className="App-logo-ggplay" alt="logo" />                     
                         </a>
-
                     </div>
                 </div>
             </div>
@@ -79,7 +76,7 @@ function Section() {
             <div className="div-content-right">
                 <div className="div-event">
                     <h3>Sự kiện đang diễn ra</h3>
-                    <div className="div-hollow">
+                    <div className="div-hollow" style={{overflow: "hidden"}}>
                         <OwlCarousel className="owl-carousel owl-theme" items="1" autoplay={false} nav={true} dots={false} loop={false} margin={10}>
                             {listImg.map((value) => {
                                 console.log(value);
@@ -98,3 +95,4 @@ function Section() {
 }
 
 export default React.memo(Section);
+
