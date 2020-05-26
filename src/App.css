@@ -282,7 +282,8 @@ a.link-appstore, a.link-chplay {
 
 a.link-appstore:hover, a.link-chplay:hover {
   transition: 0.5s;
-  transform: scale(1.1,1.1);
+  box-shadow: 0 0 5px 0 black;
+  border-radius: 5px;
 }
 
 img.App-logo-ggplay {
