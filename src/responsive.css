@@ -1,0 +1,80 @@
+/* 
+- 3 breakpoint:
++ 1: width: <= 739px (em)
++ 2: width: 740px <= width < 1023px
++ 3: width: >= 1024px
+*/
+
+/* Mobile */
+@media only screen and (max-width: 739px) {
+    div.App {
+        max-width: 100%;
+    }
+
+    header.app-header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 30px 0;
+    }
+
+    section.container-form {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    form.form-search {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+        padding: 0;
+    }
+
+    div.div-container {
+
+    }
+
+    section.app-header__nav-null,
+    section.app-header__nav-list-item {
+        display: none;
+    }
+
+    nav.app-header__nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    a.link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    section.app-section {
+        flex-direction: column-reverse;
+    }
+
+    div.div-content-right {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    div.div-event {
+        padding-left: 0;
+    }
+} 
+
+/* Tablet */
+@media only screen and (min-width: 740px) and (max-width: 1023px) {
+    
+} 
+
+/* PC resolution and PC */
+@media only screen and (min-width: 1024px) {    
+    
+} 
