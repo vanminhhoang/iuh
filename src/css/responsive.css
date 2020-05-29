@@ -32,10 +32,6 @@
         padding: 0;
     }
 
-    div.div-container {
-
-    }
-
     section.app-header__nav-null,
     section.app-header__nav-list-item {
         display: none;
@@ -54,8 +50,11 @@
     }
 
     section.app-section {
+        display: flex;
         flex-direction: column-reverse;
     }
+
+    
 
     div.div-content-right {
         width: 100%;

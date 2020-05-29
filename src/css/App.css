@@ -10,17 +10,16 @@
   list-style: none; 
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 div.App{
-  box-sizing: border-box;
   width: 100%;
   overflow-x: hidden;
 }
 
 div.div-container {
   margin: 0 auto;
-  box-sizing: border-box;
   max-width: 100%;
   width: 1200px;
 }
@@ -83,7 +82,10 @@ button.btn-search:hover {
   display: flex;
   justify-content:center;
   padding-top: 54px;
+  /* background-color: black; */
 }
+
+
 
 nav.app-header__nav {
   height: 100%;
