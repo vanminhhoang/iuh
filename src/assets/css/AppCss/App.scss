@@ -1,0 +1,24 @@
+$background-color-web: #88c6fd;
+  
+  *{
+    outline: none;
+    color: #333;
+    list-style: none; 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  div.App{
+    width: 100%;
+    overflow-x: hidden;
+    // background-color: $background-color-web;
+  }
+  
+  div.div-container {
+    margin: 0 auto;
+    max-width: 100%;
+    width: 1200px;
+  }
+  
+  
