@@ -1,0 +1,210 @@
+div.app-div-login {
+  width: 800px;
+  height: 450px;
+  max-width: 100%;
+  margin: 0 auto;
+  border-radius: 15px;
+  -webkit-box-shadow: 0 0 7px 3px gray;
+          box-shadow: 0 0 7px 3px gray;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+div.app-div-login div.div-left {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+div.app-div-login div.div-right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+div.app-div-login div.div-right div.div-right-login {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+}
+
+div.app-div-login div.div-right div.div-right-login img {
+  width: 90px;
+  height: 90px;
+}
+
+div.app-div-login div.div-right div.div-right-login form.form-login {
+  padding-top: 15px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+div.app-div-login div.div-right div.div-right-login form.form-login div.email {
+  padding: 5px 15px;
+  height: 40px;
+  width: 270px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 10px;
+  background-color: #eaeef7;
+}
+
+div.app-div-login div.div-right div.div-right-login form.form-login div.email svg {
+  width: 25px;
+  height: 25px;
+}
+
+div.app-div-login div.div-right div.div-right-login form.form-login div.email svg path {
+  fill: gray;
+}
+
+div.app-div-login div.div-right div.div-right-login form.form-login div.email input {
+  font-size: 15px;
+  padding-left: 15px;
+  background-color: transparent;
+  width: 80%;
+  border: none;
+}
+
+div.app-div-login div.div-right div.div-right-login form.form-login div.password {
+  margin-top: 15px;
+  background-color: #eaeef7;
+  padding: 5px 15px;
+  height: 40px;
+  width: 270px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 10px;
+}
+
+div.app-div-login div.div-right div.div-right-login form.form-login div.password svg {
+  width: 25px;
+  height: 25px;
+}
+
+div.app-div-login div.div-right div.div-right-login form.form-login div.password svg path {
+  fill: gray;
+}
+
+div.app-div-login div.div-right div.div-right-login form.form-login div.password svg.fa-eye-slash {
+  display: none;
+}
+
+div.app-div-login div.div-right div.div-right-login form.form-login div.password svg.fa-eye {
+  display: block;
+}
+
+div.app-div-login div.div-right div.div-right-login form.form-login div.password input {
+  width: 80%;
+  font-size: 15px;
+  padding-left: 15px;
+  background-color: transparent;
+  width: 200px;
+  border: none;
+}
+
+div.app-div-login div.div-right div.div-right-login div.submit-login {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+div.app-div-login div.div-right div.div-right-login div.submit-login a.link-forgot {
+  text-decoration: none;
+  padding-top: 8px;
+  padding-bottom: 15px;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  color: gray;
+  font-size: 15px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+div.app-div-login div.div-right div.div-right-login div.submit-login a.link-forgot:hover {
+  color: #8d00ff;
+}
+
+div.app-div-login div.div-right div.div-right-login div.submit-login button {
+  border: none;
+  background-color: transparent;
+  width: 270px;
+  height: 45px;
+}
+
+div.app-div-login div.div-right div.div-right-login div.submit-login button a {
+  line-height: 45px;
+  width: 270px;
+  height: 45px;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+div.app-div-login div.div-right div.div-right-login div.submit-login button a div {
+  font-size: 17px;
+  color: white;
+  background-color: #ffa059;
+  width: 270px;
+  height: 45px;
+  border-radius: 50px;
+}
+
+div.app-div-login div.div-right div.div-right-login div.submit-login button a div:hover {
+  color: #8d00ff;
+}
+
+div.app-div-login div.div-right div.div-right-login div.submit-login a.link-create-account {
+  padding: 20px 0;
+  font-size: 15px;
+  text-decoration: none;
+  color: gray;
+}
+
+div.app-div-login div.div-right div.div-right-login div.submit-login a.link-create-account:hover {
+  color: #8d00ff;
+}
+/*# sourceMappingURL=LoginFormHeader.css.map */

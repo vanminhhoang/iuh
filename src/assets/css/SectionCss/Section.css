@@ -251,10 +251,14 @@ div.item {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    overflow-y: hidden;
+  }
+  section.app-section div.div-content-left div.iuh-community {
+    position: relative;
+    top: 80px;
   }
   section.app-section div.div-content-left div.link-appstore-chplay {
     width: 100%;
-    padding-top: 30px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -268,16 +272,21 @@ div.item {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    position: relative;
+    top: 550px;
   }
   section.app-section div.div-content-left div.link-appstore-chplay div.div-link-appstore-chplay a.link-appstore {
     width: 200px;
     height: 50px;
+    margin-right: 20px;
   }
   section.app-section div.div-content-left div.link-appstore-chplay div.div-link-appstore-chplay a.link-chplay {
     width: 200px;
     height: 50px;
   }
   section.app-section div.div-content-right {
+    position: relative;
+    top: -150px;
     padding-top: 30px;
     display: -webkit-box;
     display: -ms-flexbox;

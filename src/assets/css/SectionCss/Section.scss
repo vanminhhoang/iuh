@@ -209,26 +209,30 @@ section.app-section {
   section.app-section {
     display: flex;
     flex-direction: column;
+    overflow-y: hidden;
 
     div.div-content-left {
 
       div.iuh-community {
-
+        position: relative;
+        top: 80px;
       }
 
       div.link-appstore-chplay {
         width: 100%;
-        padding-top: 30px;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        position: relative;
+        top: 550px;
 
         div.div-link-appstore-chplay {
           
           a.link-appstore {
             width: 200px;
             height: 50px;
+            margin-right: 20px;
           }
 
           a.link-chplay {
@@ -240,6 +244,8 @@ section.app-section {
     }
 
     div.div-content-right {
+      position: relative;
+      top: -150px;
       padding-top: 30px;
       display: flex;
       flex-direction: column;

@@ -4,7 +4,7 @@ header.app-header {
 
 header.app-header section.app-header__main {
   width: 100%;
-  border-bottom: 1px solid #eceef2;
+  border-bottom: 1px solid gray;
 }
 
 header.app-header section.app-header__main nav.app-header__nav {
@@ -70,13 +70,23 @@ header.app-header section.app-header__main nav.app-header__nav ul.app-header_nav
   color: #8d00ff;
 }
 
-header.app-header section.app-header__main nav.app-header__nav ul.app-header_nav-link li.link-item1 a div {
-  width: 100px;
-  height: 15px;
-  border-bottom: 1.5px solid black;
+header.app-header section.app-header__main nav.app-header__nav ul.app-header_nav-link li.link-item4 button {
+  border: none;
+  background-color: transparent;
 }
 
-header.app-header section.app-header__main nav.app-header__nav ul.app-header_nav-link li.link-item1 a,
+header.app-header section.app-header__main nav.app-header__nav ul.app-header_nav-link li.link-item4 button a {
+  text-decoration: none;
+  font-size: 23px;
+  font-weight: 650;
+}
+
+header.app-header section.app-header__main nav.app-header__nav ul.app-header_nav-link li.link-item4 button a:hover {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  color: #8d00ff;
+}
+
 header.app-header section.app-header__main nav.app-header__nav ul.app-header_nav-link li.link-item2 a,
 header.app-header section.app-header__main nav.app-header__nav ul.app-header_nav-link li.link-item3 a {
   text-decoration: none;
@@ -170,6 +180,7 @@ header.app-header section.container-form form.form-search button.btn-search a.li
 
 @media only screen and (max-width: 739px) {
   header.app-header section.app-header__main {
+    border-bottom: none;
     -webkit-box-shadow: 0 0 7px 3px gray;
             box-shadow: 0 0 7px 3px gray;
   }
@@ -178,8 +189,17 @@ header.app-header section.container-form form.form-search button.btn-search a.li
         -ms-flex-pack: start;
             justify-content: flex-start;
     padding-left: 18px;
+    -webkit-box-flex: 2;
+        -ms-flex: 2;
+            flex: 2;
   }
   header.app-header section.app-header__main nav.app-header__nav ul.app-header_nav-link {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+  }
+  header.app-header section.app-header__main nav.app-header__nav ul.app-header_nav-link li.link-item2,
+  header.app-header section.app-header__main nav.app-header__nav ul.app-header_nav-link li.link-item3 {
     display: none;
   }
   header.app-header section.app-header__main nav.app-header__nav div.app-header__nav-bars {
