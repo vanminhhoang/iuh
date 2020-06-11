@@ -7,8 +7,30 @@ $transition-color-hover-header: 0.3s;
 
 header.app-header {
   width: 100%; 
-  section.app-header__main {
+  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background-color: aqua;
+  
+
+  div.div-login {
+    height: 100%;
     width: 100%;
+    background-color: rgba(0,0,0,0.6);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    display: none;
+    overflow-y: auto;
+  }
+
+  section.app-header__main {
+    margin: 0 auto;
+    width: 1200px;
+    max-width: 100%;
     border-bottom: 1px solid gray;
     
     nav.app-header__nav {

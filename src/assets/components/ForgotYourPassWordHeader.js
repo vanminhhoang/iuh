@@ -2,10 +2,14 @@ import React from 'react';
 import '../css/HeaderCss/ForgotYourPassWord.css';
 import icon_main_iuh from '../../img/icon-main-iuh.png';
 
-function ForgotYourPassWord() {
+function ForgotYourPassWord(props) {
     return (
-        <div className="app-div-forgot">
+        <div style={props.st} className="app-div-forgot">
             <img src={icon_main_iuh} alt=""/>
+            <button class="btn-closelogin" onClick={() => setdisplayBackgroundLogin({
+                      ...displayBackgroundLogin, display: "none"
+                    })}><a href="#">+</a></button>
+            <h2>ĐĂNG KÍ</h2>
             <h3>Tìm tài khoản của bạn</h3>
             <p>Nhập số điện thoại hoặc email khôi phục</p>
             <form className="form-input-email">

@@ -1,14 +1,15 @@
 div.app-div-login {
   width: 800px;
   height: 450px;
+  margin: auto;
   max-width: 100%;
-  margin: 0 auto;
   border-radius: 15px;
-  -webkit-box-shadow: 0 0 7px 3px gray;
-          box-shadow: 0 0 7px 3px gray;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  background-color: white;
+  -webkit-transform: translateY(-200%);
+          transform: translateY(-200%);
 }
 
 div.app-div-login div.div-left {
@@ -31,6 +32,7 @@ div.app-div-login div.div-right {
 }
 
 div.app-div-login div.div-right div.div-right-login {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -50,6 +52,25 @@ div.app-div-login div.div-right div.div-right-login {
 div.app-div-login div.div-right div.div-right-login img {
   width: 90px;
   height: 90px;
+}
+
+div.app-div-login div.div-right div.div-right-login button.btn-closelogin {
+  border: none;
+  background: transparent;
+  font-size: 55px;
+}
+
+div.app-div-login div.div-right div.div-right-login button.btn-closelogin a {
+  text-decoration: none;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  position: absolute;
+  top: 0;
+  right: 20px;
+}
+
+div.app-div-login div.div-right div.div-right-login button.btn-closelogin a:hover {
+  color: #ffa059;
 }
 
 div.app-div-login div.div-right div.div-right-login form.form-login {

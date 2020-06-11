@@ -4,6 +4,7 @@ section.app-section {
   display: -ms-flexbox;
   display: flex;
   width: 1200px;
+  padding-top: 300px;
 }
 
 section.app-section div.div-content-left {

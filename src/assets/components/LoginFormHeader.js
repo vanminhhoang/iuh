@@ -1,9 +1,21 @@
-import React from 'react';
+import React, {useState} from 'react';
 import icon_main_iuh from '../../img/icon-main-iuh.png';
 import '../css/HeaderCss/LoginFormHeader.css';
+// components
+// import ForgotPassWord from './ForgotYourPassWordHeader';
+// import CreateAccount from './CreateNewAccount';
 
 
-function Login() {
+
+
+    // const [styleCreate, setStyleCreate] = useState({
+    //     display: ""
+    // });
+
+    // const [styleForgot, setStyleForgot] = useState({
+    //     display: ""
+    // });
+function Login(props) {
     return (
         <div className="app-div-login">
             <div className="div-left">
@@ -12,6 +24,7 @@ function Login() {
             <div className="div-right">
                 <div className="div-right-login">
                     <img src={icon_main_iuh}  alt=""/>
+                    <button class="btn-closelogin"><a href="#">+</a></button>
                     <form className="form-login"> 
                         <div className="email">
                             <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="envelope" class="svg-inline--fa fa-envelope fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M464 64H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm0 48v40.805c-22.422 18.259-58.168 46.651-134.587 106.49-16.841 13.247-50.201 45.072-73.413 44.701-23.208.375-56.579-31.459-73.413-44.701C106.18 199.465 70.425 171.067 48 152.805V112h416zM48 400V214.398c22.914 18.251 55.409 43.862 104.938 82.646 21.857 17.205 60.134 55.186 103.062 54.955 42.717.231 80.509-37.199 103.053-54.947 49.528-38.783 82.032-64.401 104.947-82.653V400H48z"></path></svg>
@@ -25,9 +38,19 @@ function Login() {
                         </div>
                     </form>
                     <div className="submit-login">
-                        <a className="link-forgot" href="#">Forgot your password?</a>
+                        <a className="link-forgot" href="#" onClick={() => {setStyleForgot({
+                            ...styleForgot, display: "flex"});
+                            setStyleCreate({
+                                ...styleCreate, display: "none"
+                            });
+                        }}>Forgot your password?</a>
                         <button type="button" className="btn-login"><a href="#"><div>LOGIN</div></a></button>
-                        <a className="link-create-account" href="#">Create new account</a>
+                        <a className="link-create-account" href="#" onClick={() => {setStyleCreate({
+                            ...styleCreate, display: "flex"});
+                            setStyleForgot({
+                                ...styleForgot, display: "none"
+                            });
+                        }}>Create new account</a>
                     </div>
                 </div>
             </div>       

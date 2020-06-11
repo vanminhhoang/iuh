@@ -2,10 +2,11 @@ import React from 'react';
 import '../css/HeaderCss/CreateNewAccount.css';
 import icon_main_iuh from '../../img/icon-main-iuh.png';
 
-function CreateAccount() {
+function CreateAccount(props) {
     return (
-        <form className="app-div-create">
+        <form style={props.s} className="app-div-create">
             <img src={icon_main_iuh} alt=""/>
+            <button class="btn-closelogin"><a href="#">+</a></button>
             <h2>ĐĂNG KÍ</h2>
             <div className="div-create">
                 <div className="create-left">

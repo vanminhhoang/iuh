@@ -1,9 +1,29 @@
 header.app-header {
   width: 100%;
+  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background-color: aqua;
+}
+
+header.app-header div.div-login {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  display: none;
+  overflow-y: auto;
 }
 
 header.app-header section.app-header__main {
-  width: 100%;
+  margin: 0 auto;
+  width: 1200px;
+  max-width: 100%;
   border-bottom: 1px solid gray;
 }
 

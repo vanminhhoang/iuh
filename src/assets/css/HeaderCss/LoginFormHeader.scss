@@ -1,12 +1,14 @@
+
 div.app-div-login {
     width: 800px;
     height: 450px;
+    margin: auto;
     max-width: 100%;
-    margin: 0 auto;
     border-radius: 15px;
-    box-shadow: 0 0 7px 3px gray;
     display: flex;
-
+    background-color: white;
+    transform: translateY(-200%);
+    
 
     div.div-left{
         flex: 1;
@@ -18,6 +20,7 @@ div.app-div-login {
         flex: 1;
 
         div.div-right-login {
+            position: relative;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -28,6 +31,24 @@ div.app-div-login {
                 width: 90px;
                 height: 90px;
             }
+            
+            button.btn-closelogin {
+                border: none;
+                background: transparent;
+                font-size: 55px;
+                
+                a {
+                    text-decoration: none;
+                    transform: rotate(-45deg);
+                    position: absolute;
+                    top: 0;
+                    right: 20px;
+
+                    &:hover {
+                        color: #ffa059;
+                    }
+                }
+            }
 
             form.form-login {
                 padding-top: 15px;
@@ -36,7 +57,7 @@ div.app-div-login {
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
-
+                    
                 div.email {
                     padding: 5px 15px;
                     height: 40px;

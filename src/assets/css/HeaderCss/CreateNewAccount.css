@@ -2,10 +2,9 @@ form.app-div-create {
   width: 800px;
   height: 450px;
   max-width: 100%;
-  margin: 0 auto;
+  margin: auto;
   border-radius: 15px;
-  -webkit-box-shadow: 0 0 7px 3px gray;
-          box-shadow: 0 0 7px 3px gray;
+  background-color: white;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -19,6 +18,27 @@ form.app-div-create {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: relative;
+  display: none;
+}
+
+form.app-div-create button.btn-closelogin {
+  border: none;
+  background: transparent;
+  font-size: 55px;
+}
+
+form.app-div-create button.btn-closelogin a {
+  text-decoration: none;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  position: absolute;
+  top: 0;
+  right: 20px;
+}
+
+form.app-div-create button.btn-closelogin a:hover {
+  color: #ffa059;
 }
 
 form.app-div-create img {
