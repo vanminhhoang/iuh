@@ -7,7 +7,15 @@ div.app-div-login {
     border-radius: 15px;
     display: flex;
     background-color: white;
-    transform: translateY(-200%);
+
+    @keyframes anim {
+        from {
+            transform: translateY(-200%);
+        }
+        to {
+            transform: translateY(0%);
+        }
+    }
     
 
     div.div-left{

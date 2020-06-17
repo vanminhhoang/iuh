@@ -8,8 +8,28 @@ div.app-div-login {
   display: -ms-flexbox;
   display: flex;
   background-color: white;
-  -webkit-transform: translateY(-200%);
-          transform: translateY(-200%);
+}
+
+@-webkit-keyframes anim {
+  from {
+    -webkit-transform: translateY(-200%);
+            transform: translateY(-200%);
+  }
+  to {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+}
+
+@keyframes anim {
+  from {
+    -webkit-transform: translateY(-200%);
+            transform: translateY(-200%);
+  }
+  to {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
 }
 
 div.app-div-login div.div-left {

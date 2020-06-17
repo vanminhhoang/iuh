@@ -12,6 +12,15 @@ form.app-div-create {
     position: relative;
     display: none;
 
+    @keyframes anim {
+        from {
+            transform: translateY(-200%);
+        }
+        to {
+            transform: translateY(0%);
+        }
+    }
+
     button.btn-closelogin {
         border: none;
         background: transparent;

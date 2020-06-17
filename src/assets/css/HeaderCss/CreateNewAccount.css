@@ -22,6 +22,28 @@ form.app-div-create {
   display: none;
 }
 
+@-webkit-keyframes anim {
+  from {
+    -webkit-transform: translateY(-200%);
+            transform: translateY(-200%);
+  }
+  to {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+}
+
+@keyframes anim {
+  from {
+    -webkit-transform: translateY(-200%);
+            transform: translateY(-200%);
+  }
+  to {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+}
+
 form.app-div-create button.btn-closelogin {
   border: none;
   background: transparent;
