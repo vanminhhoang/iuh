@@ -72,22 +72,81 @@ header.app-header {
           color: $color-hover-header;
         }
 
-        li.link-item4 button {
-          border: none;
-          background-color: transparent;
-          
-          a {
-            text-decoration: none;
-            font-size: $font-size-header;
-            font-weight: $font-weight-header;
-
-            &:hover {
-              transition: $transition-color-hover-header;
-              color: $color-hover-header;
-            } 
+        li.link-item4 {
+          button {
+            border: none;
+            background-color: transparent;
+            
+            a {
+              text-decoration: none;
+              font-size: $font-size-header;
+              font-weight: $font-weight-header;
+  
+              &:hover {
+                transition: $transition-color-hover-header;
+                color: $color-hover-header;
+              } 
+            }
           }
 
-          
+          svg#icon-user {
+            display: none;
+            cursor: pointer;
+            width: 28px;
+            height: 28px;
+
+            &:hover ~ ul{
+              display: block;
+            }
+          }
+
+         
+
+          ul{
+            
+            width: 200px;
+            display: none;
+            position: absolute;
+
+            &:hover{
+              display: block;
+
+              li {
+                p {
+                  transition: 0.3s;
+                  padding-left: 15px;
+                }
+              }
+            }
+
+            li {
+              height: 40px;
+              background-color: gray;
+              position: relative;
+              cursor: pointer;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+
+              svg {
+                position: absolute;
+                left: 9px;
+                width: 28px;
+                height: 28px;
+
+                path {
+                  fill: white
+                }
+              }
+
+              p {
+                font-size: $font-size-header;
+                color: white;
+              }
+
+            }
+          }
+
         }
 
         li.link-item2 a, 

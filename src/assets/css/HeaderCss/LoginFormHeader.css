@@ -209,6 +209,34 @@ div.app-div-login div.div-right div.div-right-login div.submit-login a.link-forg
   color: #8d00ff;
 }
 
+div.app-div-login div.div-right div.div-right-login div.submit-login div.div-img {
+  position: relative;
+  padding: 15px 0;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+div.app-div-login div.div-right div.div-right-login div.submit-login div.div-img svg {
+  position: relative;
+  cursor: pointer;
+  width: 35px;
+  height: 35px;
+  margin: 0 15px;
+}
+
+div.app-div-login div.div-right div.div-right-login div.submit-login div.div-img svg:hover path {
+  fill: #8d00ff;
+}
+
+div.app-div-login div.div-right div.div-right-login div.submit-login div.div-img svg path {
+  fill: #ffa059;
+}
+
 div.app-div-login div.div-right div.div-right-login div.submit-login button {
   border: none;
   background-color: transparent;
@@ -239,7 +267,6 @@ div.app-div-login div.div-right div.div-right-login div.submit-login button a di
 }
 
 div.app-div-login div.div-right div.div-right-login div.submit-login a.link-create-account {
-  padding: 20px 0;
   font-size: 15px;
   text-decoration: none;
   color: gray;

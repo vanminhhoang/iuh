@@ -23,6 +23,7 @@ function CreateAccount(props) {
               props.setStyleLogin({...props.styleLogin, display: "flex"});
               props.setStyleCreate({...props.styleCreate, display: "none"});
               props.setStyleForgot({...props.styleForgot, display: "none"});
+              props.setStyleLoginPhone({...props.styleLoginPhone, display: "none"});
             }}><a href="#">+</a></button>
             <h2>ĐĂNG KÍ</h2>
             <div className="div-create">

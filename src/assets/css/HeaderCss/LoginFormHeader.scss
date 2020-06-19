@@ -153,6 +153,32 @@ div.app-div-login {
                     }
                 }
 
+                div.div-img {
+                    position: relative;
+                    padding: 15px 0;
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+
+                    svg {
+                        position: relative;
+                        cursor: pointer;
+                        width: 35px;
+                        height: 35px;
+                        margin: 0 15px;
+
+                        &:hover {
+                            path {
+                                fill: rgb(141, 0, 255);
+                            }
+                        }
+
+                        path {
+                            fill: #ffa059;
+                        }
+                    }
+                }
+
                 button {
                     border: none;
                     background-color: transparent;
@@ -183,7 +209,6 @@ div.app-div-login {
                 }
 
                 a.link-create-account {
-                    padding: 20px 0;
                     font-size: 15px;
                     text-decoration: none;
                     color: gray;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import ggplay from '../../img/ggplay.png';
 import appstrore from '../../img/appstrore.png';
 import '../css/SectionCss/Section.css'
@@ -8,7 +8,46 @@ import 'owl.carousel/dist/assets/owl.carousel.min.css';
 import 'owl.carousel/dist/assets/owl.theme.default.min.css';
 // carousel
 
+
 function Section() {
+    const [arrImgValue, setArrImgValue] = useState([]);    
+
+    const arrImg = () => {
+        if (window.fetch) {
+            const urlAPI = "http://ec2-18-222-220-226.us-east-2.compute.amazonaws.com:3000/web/event";
+            
+            fetch(urlAPI) 
+                .then(response => response.json())
+                .then(result => {
+                    // localStorage.setItem("image",JSON.stringify(result));
+                    // var img = localStorage.getItem("image");
+                    // img = JSON.parse(img);
+                    // img = img.data;
+                    console.log(result.data);
+                    if(arrImgValue.length < 1) {
+                        setArrImgValue(result.data);
+                    }
+                    console.log(arrImgValue); 
+                })
+                .catch(error => console.log("Lỗi" + error))
+
+
+        } else {
+            console.log("Fetch not found");
+        }
+    }
+
+
+    arrImg();
+    var listImg = [];
+    for (var i = 0; i < arrImgValue.length; ++i) {
+        listImg[i] = arrImgValue[i].image;
+        console.log(listImg[i]);
+    }
+    console.log(listImg);
+
+
+
     return (
         <section className="app-section">
             <div className="div-content-left">
@@ -46,12 +85,11 @@ function Section() {
                     <h3>Sự kiện đang diễn ra</h3>
                     <div className="div-hollow">
                         <OwlCarousel className="owl-carousel owl-theme" items="1" autoplay={false} nav={true} dots={false} loop={false} margin={10}>
-                            <div className="item">1</div>
-                            <div className="item">2</div>
-                            <div className="item">3</div>
-                            <div className="item">4</div>
-                            <div className="item">5</div>
-                            <div className="item">6</div>
+                           
+                            {listImg.map((value) => {
+                                return <div className="item" ><img src={value}/></div>
+                            })}
+  
                         </OwlCarousel>
                     </div>
                 </div>

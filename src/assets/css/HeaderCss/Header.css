@@ -107,6 +107,65 @@ header.app-header section.app-header__main nav.app-header__nav ul.app-header_nav
   color: #8d00ff;
 }
 
+header.app-header section.app-header__main nav.app-header__nav ul.app-header_nav-link li.link-item4 svg#icon-user {
+  display: none;
+  cursor: pointer;
+  width: 28px;
+  height: 28px;
+}
+
+header.app-header section.app-header__main nav.app-header__nav ul.app-header_nav-link li.link-item4 svg#icon-user:hover ~ ul {
+  display: block;
+}
+
+header.app-header section.app-header__main nav.app-header__nav ul.app-header_nav-link li.link-item4 ul {
+  width: 200px;
+  display: none;
+  position: absolute;
+}
+
+header.app-header section.app-header__main nav.app-header__nav ul.app-header_nav-link li.link-item4 ul:hover {
+  display: block;
+}
+
+header.app-header section.app-header__main nav.app-header__nav ul.app-header_nav-link li.link-item4 ul:hover li p {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  padding-left: 15px;
+}
+
+header.app-header section.app-header__main nav.app-header__nav ul.app-header_nav-link li.link-item4 ul li {
+  height: 40px;
+  background-color: gray;
+  position: relative;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header.app-header section.app-header__main nav.app-header__nav ul.app-header_nav-link li.link-item4 ul li svg {
+  position: absolute;
+  left: 9px;
+  width: 28px;
+  height: 28px;
+}
+
+header.app-header section.app-header__main nav.app-header__nav ul.app-header_nav-link li.link-item4 ul li svg path {
+  fill: white;
+}
+
+header.app-header section.app-header__main nav.app-header__nav ul.app-header_nav-link li.link-item4 ul li p {
+  font-size: 23px;
+  color: white;
+}
+
 header.app-header section.app-header__main nav.app-header__nav ul.app-header_nav-link li.link-item2 a,
 header.app-header section.app-header__main nav.app-header__nav ul.app-header_nav-link li.link-item3 a {
   text-decoration: none;
