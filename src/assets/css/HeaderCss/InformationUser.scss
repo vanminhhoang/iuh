@@ -1,0 +1,228 @@
+div.info-user-container {
+    width: 500px;
+    min-height: 800px;
+    height:  100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    position: relative;
+    background-color: white;
+
+    div.div-input-info-user-container {
+        position: relative;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        z-index: 5;
+        min-height: 500px;
+        margin: 0 auto;
+
+        div.div-logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            img {
+                width: 120px;
+                height: 120px;
+            }
+        }
+
+        div.div-text-username {
+            font-size: 16px;
+            line-height: 19px;
+            font-weight: bold;
+            padding: 8px 0;
+            
+            span {
+                color: red;
+            }
+        }
+
+        div.div-input-text-username {
+            position: relative;
+
+            input {
+                box-sizing: border-box;
+                width: 100%;
+                height: 52px;
+                margin-bottom: 8px;
+                -webkit-box-align: center;
+                align-items: center;
+                font-size: 16px;
+                background: rgb(255, 255, 255);
+                border-width: 1px;
+                border-style: solid;
+                border-image: initial;
+                border-radius: 4px;
+                outline: none;
+                border-color: rgb(231, 231, 231);
+                padding-left: 43px;
+                position: relative;
+                z-index: 1;
+                background: #f5f5f5 url(../../../img/icon-username.svg) no-repeat 12px 50%!important;
+            }
+        }
+
+        div.div-text-ngaysinh {
+            font-size: 16px;
+            line-height: 19px;
+            font-weight: bold;
+            padding: 8px 0;
+
+            span {
+                color: red;
+            }
+        }
+
+        div.div-input-ngaysinh {
+            position: relative;
+
+            input {
+                box-sizing: border-box;
+                width: 100%;
+                height: 52px;
+                margin-bottom: 8px;
+                -webkit-box-align: center;
+                align-items: center;
+                font-size: 16px;
+                background: rgb(255, 255, 255);
+                border-width: 1px;
+                border-style: solid;
+                border-image: initial;
+                border-radius: 4px;
+                outline: none;
+                border-color: rgb(231, 231, 231);
+                padding-left: 43px;
+                position: relative;
+                z-index: 1;
+                background: #f5f5f5 url(../../../img/icon-calendar.svg) no-repeat 12px 50%!important;
+            }
+        }
+
+        div.div-text-sex {
+            font-size: 16px;
+            line-height: 19px;
+            font-weight: bold;
+            padding: 8px 0;
+
+            span {
+                color: red;
+            }
+        }
+
+        div.div-select-sex {
+            display: flex;
+            margin: 8px 0px 32px;
+
+            input#checkedNam:checked ~ label.div-select-nam div {
+                background-color: red;
+            }
+
+            input#checkedNu:checked ~ label.div-select-nu div {
+                background-color: red;
+            }
+
+            input#checkedLGBT:checked ~ label.div-select-LGBT div {
+                background-color: red;
+            }
+
+            label.div-select-nam {
+                text-align: center;
+                margin-right: 32px;
+                cursor: pointer;
+                flex: 0 0 auto;
+
+                &:hover {
+                    opacity: 0.7;
+                }
+
+                div {
+                    background-image: url(../../../img/Female.png);
+                    background-size: cover;
+                    width: 96px;
+                    height: 96px;
+                    cursor: pointer;
+                    filter: grayscale(100%);
+                    transition: all 0.3s ease 0s;
+
+                }
+            }
+
+            label.div-select-nu {
+                text-align: center;
+                margin-right: 32px;
+                cursor: pointer;
+                flex: 0 0 auto;
+                
+                &:hover {
+                    opacity: 0.7;
+                }
+
+                div {
+                    background-image: url(../../../img/Male.png);
+                    background-size: cover;
+                    width: 96px;
+                    height: 96px;
+                    cursor: pointer;
+                    filter: grayscale(100%);
+                    transition: all 0.3s ease 0s;
+                    
+                }
+            }
+
+            label.div-select-LGBT {
+                text-align: center;
+                margin-right: 32px;
+                cursor: pointer;
+                flex: 0 0 auto;
+
+                &:hover {
+                    opacity: 0.7;
+                }
+
+                div {
+                    background-image: url(../../../img/LGBT.png);
+                    background-size: cover;
+                    width: 96px;
+                    height: 96px;
+                    cursor: pointer;
+                    filter: grayscale(100%);
+                    transition: all 0.3s ease 0s;
+                    
+                }
+            }
+        }
+
+        button.btn-next {
+            margin: 0;
+            text-transform: none;
+            cursor: pointer;
+            overflow: visible;
+            color: rgb(255, 255, 255);
+            display: flex;
+            -webkit-box-pack: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            align-items: center;
+            width: 100%;
+            height: 52px;
+            left: calc(50% - 170px);
+            top: calc(50% - 24px + 28px);
+            font-size: 16px;
+            font-weight: bold;
+            opacity: 1;
+            background: rgb(111, 190, 73);
+            border-radius: 4px;
+            border-width: initial;
+            border-style: none;
+            border-color: initial;
+            border-image: initial;
+
+            &:disabled {
+                opacity: 0.5;
+            }
+        }
+    }
+}

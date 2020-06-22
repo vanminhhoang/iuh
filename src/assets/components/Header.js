@@ -6,38 +6,46 @@ import firebase from '../js/firebase';
 
 // components
 import SearchHeader from './SearchFormHeader';
-import CreateAccount from './CreateNewAccount';
-import ForgotPassWord from './ForgotYourPassWordHeader';
-import Login from './LoginFormHeader';
-import LoginPhone from './LoginPhone';
+import Login from './Login';
+import ShowMessageErr from './ShowMessageErr';
+import Authentication from './Authentication';
+import Password from './Password';
+import InfoUser from './InformationUser';
+
+
+
 
 
 function Header() {
+
+  const [valuePhone, setValuePhone] = useState("");
+
+  const [valueMsgErr, setValueMsgErr] = useState("Số điện thoại không hợp lệ, vui lòng nhập lại một số điện thoại gồm 10 số!");
   
-  const [displayBackgroundLogin, setdisplayBackgroundLogin] = useState({
-    display: ""
+  const [styleDisplayAuth, setStyleDisplayAuth] = useState({
+    display: "none"
   });
 
-
+  const [styleDisplayPassword, setStyleDisplayPassword] = useState({
+    display: "none"
+  });
+  
   const [styleDisplayLogin, setStyleDisplayLogin] = useState({
-    display: "none",
-    animation: ""
+    display: "none"
   });
 
-  const [styleDisplayForgot, setStyleDisplayForgot] = useState({
-    display: "none",
-    animation: ""
+  const [styleDisplayInfoUser, setStyleDisplayInfoUser] = useState({
+    display: "none"
   });
 
-  const [styleDisplayCreate, setStyleDisplayCreate] = useState({
-    display: "none",
-    animation: ""
+  const [styleDisplayMessageErr, setStyleDisplayMessageErr] = useState({
+    display: "none"
   });
 
-  const [styleDisplayLoginPhone, setStyleDisplayLoginPhone] = useState({
-      display: "none",
-      animation: ""
+  const [styleDisplayBackgroundLogin, setStyleDisplayBackgroundLogin] = useState({
+    display: "none"
   });
+
 
   const [styleDisplayIconLogin, setStyleDisplayIconLogin] = useState({
     display: "none"
@@ -53,7 +61,7 @@ function Header() {
       setStyleDisplayIconLogin({...styleDisplayIconLogin, display: "none"});
       setStyleDisplayTextLogin({...styleDisplayTextLogin, display: "block"});
     }).catch(function(error) {
-      console.log("Đăng xuất thất bại: " + error)
+      console.log("Đăng xuất thất bại: " + error);
     });
   }
 
@@ -79,8 +87,8 @@ function Header() {
             </li>
             <li className="link-item4">
               <button style={styleDisplayTextLogin} type="button"><a href="#" onClick={() => {
-                setdisplayBackgroundLogin({...displayBackgroundLogin, display: "flex"});
-                setStyleDisplayLogin({...styleDisplayLogin, display: "flex", animation: "anim 0.5s"});
+                setStyleDisplayBackgroundLogin({...styleDisplayBackgroundLogin, display: "block"});
+                setStyleDisplayLogin({...styleDisplayLogin, display: "flex"});
               }}>Đăng nhập</a></button>
               <svg style={styleDisplayIconLogin} id="icon-user" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="user" class="svg-inline--fa fa-user fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4z"></path></svg>
               <ul>  
@@ -105,30 +113,28 @@ function Header() {
     
       <SearchHeader/>
 
-      <div style={displayBackgroundLogin} className="div-login">
-        <Login styleBG={displayBackgroundLogin} setStyleBG={setdisplayBackgroundLogin}
-        styleLogin={styleDisplayLogin} setStyleLogin={setStyleDisplayLogin}
-        styleCreate={styleDisplayCreate} setStyleCreate={setStyleDisplayCreate}
-        styleForgot={styleDisplayForgot} setStyleForgot={setStyleDisplayForgot}
-        styleLoginPhone={styleDisplayLoginPhone} setStyleLoginPhone={setStyleDisplayLoginPhone}/>
-        <CreateAccount styleBG={displayBackgroundLogin} setStyleBG={setdisplayBackgroundLogin}
-        styleLogin={styleDisplayLogin} setStyleLogin={setStyleDisplayLogin}
-        styleCreate={styleDisplayCreate} setStyleCreate={setStyleDisplayCreate}
-        styleForgot={styleDisplayForgot} setStyleForgot={setStyleDisplayForgot}
-        styleLoginPhone={styleDisplayLoginPhone} setStyleLoginPhone={setStyleDisplayLoginPhone}/>
-        <ForgotPassWord styleBG={displayBackgroundLogin} setStyleBG={setdisplayBackgroundLogin}
-        styleLogin={styleDisplayLogin} setStyleLogin={setStyleDisplayLogin}
-        styleCreate={styleDisplayCreate} setStyleCreate={setStyleDisplayCreate}
-        styleForgot={styleDisplayForgot} setStyleForgot={setStyleDisplayForgot}
-        styleLoginPhone={styleDisplayLoginPhone} setStyleLoginPhone={setStyleDisplayLoginPhone}/>
-        <LoginPhone styleBG={displayBackgroundLogin} setStyleBG={setdisplayBackgroundLogin}
-        styleLogin={styleDisplayLogin} setStyleLogin={setStyleDisplayLogin}
-        styleCreate={styleDisplayCreate} setStyleCreate={setStyleDisplayCreate}
-        styleForgot={styleDisplayForgot} setStyleForgot={setStyleDisplayForgot}
-        styleLoginPhone={styleDisplayLoginPhone} setStyleLoginPhone={setStyleDisplayLoginPhone}
-        styleIconLogin={styleDisplayIconLogin} setStyleIconLogin={setStyleDisplayIconLogin}
-        styleTextLogin={styleDisplayTextLogin} setStyleTextLogin={setStyleDisplayTextLogin}/>
+      <div style={styleDisplayBackgroundLogin} className="div-background">
+        <Login styleLogin={styleDisplayLogin} setStyleLogin={setStyleDisplayLogin}
+            styleBGLogin={styleDisplayBackgroundLogin} setStyleBGLogin={setStyleDisplayBackgroundLogin}
+            styleSM={styleDisplayMessageErr}  setStyleSM={setStyleDisplayMessageErr}
+            setValueNum={setValuePhone}
+            styleAuth={styleDisplayAuth} setStyleAuth={setStyleDisplayAuth}/>
+        <ShowMessageErr styleSME={styleDisplayMessageErr} setStyleSME={setStyleDisplayMessageErr}
+          value={valueMsgErr}/>
+        <Authentication valueNum={valuePhone}
+          styleAuth={styleDisplayAuth} setStyleAuth={setStyleDisplayAuth}
+          styleLogin={styleDisplayLogin} setStyleLogin={setStyleDisplayLogin}
+          stylePass={styleDisplayPassword} setStylePass={setStyleDisplayPassword}/>
+        <Password stylePass={styleDisplayPassword} setStylePass={setStyleDisplayPassword}
+          styleSME={styleDisplayMessageErr} setStyleSME={setStyleDisplayMessageErr} setValueMsg={setValueMsgErr}
+          styleInfo={styleDisplayInfoUser} setStyleInfo={setStyleDisplayInfoUser}/>
+        <InfoUser valuePhone={valuePhone}
+          styleInfo={styleDisplayInfoUser}
+          style={styleDisplayBackgroundLogin} setStyleBGLogin={setStyleDisplayBackgroundLogin}/>
       </div>
+
+
+      
     </header>  
   );
 }

@@ -231,6 +231,18 @@ header.app-header {
   
 }
 
+div.div-background {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0,0,0,0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  display: block;
+  overflow-y: auto;
+}
+
 // Mobile
 @media only screen and (max-width: 739px) {
   header.app-header {

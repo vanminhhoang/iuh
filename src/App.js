@@ -10,7 +10,6 @@ function App() {
         <div className="div-container">
           <Header/>
           <Section/>  
-          
         </div>
     </div>
   );

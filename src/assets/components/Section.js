@@ -69,10 +69,10 @@ function Section() {
                 <div className="link-appstore-chplay">
                     <h4>Tham gia với chúng tôi trên: </h4>
                     <div className="div-link-appstore-chplay">
-                        <a href="#" className="link-appstore">
+                        <a href="https://www.apple.com/ios/app-store/" target="_blank" className="link-appstore">
                             <img src={appstrore} className="App-logo-appstrore" alt="logo" />                    
                         </a>
-                        <a href="#" className="link-chplay">
+                        <a href="https://play.google.com/store" target="_blank" className="link-chplay">
                             <img src={ggplay} className="App-logo-ggplay" alt="logo" />                     
                         </a>
 
@@ -85,11 +85,9 @@ function Section() {
                     <h3>Sự kiện đang diễn ra</h3>
                     <div className="div-hollow">
                         <OwlCarousel className="owl-carousel owl-theme" items="1" autoplay={false} nav={true} dots={false} loop={false} margin={10}>
-                           
                             {listImg.map((value) => {
                                 return <div className="item" ><img src={value}/></div>
                             })}
-  
                         </OwlCarousel>
                     </div>
                 </div>
