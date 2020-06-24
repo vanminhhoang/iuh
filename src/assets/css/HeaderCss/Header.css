@@ -5,7 +5,7 @@ header.app-header {
   top: 0;
   left: 0;
   z-index: 10;
-  background-color: aqua;
+  background-color: #6fbe49;
 }
 
 header.app-header div.div-login {

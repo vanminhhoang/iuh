@@ -48,7 +48,7 @@ function Password (props) {
                 <div className="div-text-create-pass">Tạo mật khẩu mới tối thiểu 8 ký tự, bao gồm cả chữ và số</div>
                 <form className="form-input">
                     <div className="div-create-password">
-                        <input className="" type={showPassword.show == false ? "password" : "text"} placeholder="Mật khẩu" onChange={(e) => setValuePass(e.target.value)}/><img className="icon-show-hide-password" src={showPassword.show == false ? showPass : hiddenPass} alt="" onClick={() => setShowPassword({...showPassword, show: showPassword.show == false ? true : false, type: showPassword.show == false ? "password" : "text"})} alt=""/>
+                        <input type={showPassword.show == false ? "password" : "text"} placeholder="Mật khẩu" onChange={(e) => setValuePass(e.target.value)}/><img className="icon-show-hide-password" src={showPassword.show == false ? showPass : hiddenPass} alt="" onClick={() => setShowPassword({...showPassword, show: showPassword.show == false ? true : false, type: showPassword.show == false ? "password" : "text"})} alt=""/>
                     </div>
                     <div class="div-create-password-again">
                         <input className="" type={showPasswordAgain.show == false ? "password" : "text"} placeholder="Xác nhận mật khẩu" onChange={(e) => setValuePassAgain(e.target.value)}/><img className="icon-show-hide-password" src={showPasswordAgain.show == false ? showPass : hiddenPass} alt="" onClick={() => setshowPasswordAgain({...showPasswordAgain, show: showPasswordAgain.show == false ? true : false, type: showPasswordAgain.show == false ? "password" : "text"})} alt=""/>
@@ -63,4 +63,4 @@ function Password (props) {
     );
 }
 
-export default Password;
+export default React.memo(Password);

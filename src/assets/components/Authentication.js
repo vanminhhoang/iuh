@@ -6,41 +6,28 @@ import firebase from '../js/firebase';
 
 
 function Auth (props) {
-    console.log(props.valueNum);
     const [valueVerifiCode, setValueVerifiCode] = useState("");
 
     // cout down
     const [count, setCount] = useState(120);
-    console.log(count);
     
-    // useEffect(() => {
-    //     setTimeout(() => {if (count != 0) setCount(count - 1)}, 1000)
-    // },[count]);
+    useEffect(() => {
+        setTimeout(() => {if (count != 0) setCount(count - 1)}, 1000);
+    }, [count]);
 
-    // useEffect(() => {
-    //     alert("Hello!!!!!!!!!!!" + valueVerifiCode);
-    // },[valueVerifiCode]);
+
 
 
     function authCode (VerifiCode) {
-        // const numberPhone = props.valueNum.replace(props.valueNum[0], "+84");
-        // console.log(numberPhone);
-
-
-        // let recaptcha = new firebase.auth.RecaptchaVerifier("recaptcha-container", {size: "invisible"}); 
-        
-        // Gửi mã firebase sms
-        // let firebaseAuth = firebase.auth().signInWithPhoneNumber(numberPhone,recaptcha);
-
-        // let code = prompt("Enter the otp", "");
-        //     if (code == null) return;
-
-        console.log("Hello");
 
         if (VerifiCode == null) {
             console.log("Mã code sai");
             return;
         }
+
+        console.log(VerifiCode);
+
+        // let firebaseAuth = props.firebasePhone;
         
         // firebaseAuth.then(function(confirmationResult){
         //     console.log("xác nhận mã recaptcha");
@@ -53,11 +40,8 @@ function Auth (props) {
         //     }).catch((err) => {
         //         console.log("SMS not sent: " + err);
         //     })
-        
         // })
     }
-
-
 
       
     return (
@@ -82,10 +66,9 @@ function Auth (props) {
                     props.setStyleAuth({...props.styleAuth, display: "none"});
                 }}>Dùng số điện thoại khác</button>
                 <div className="div-note"><span>Lưu ý:</span> Không chia sẻ mật khẩu và mã xác thực của bạn cho bất kỳ ai</div>
-                <div id="recaptcha-container"></div>
             </div>
         </div>
     );
 }
 
-export default Auth;
+export default React.memo(Auth);

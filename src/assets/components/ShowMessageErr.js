@@ -15,4 +15,4 @@ function ShowMessageErr (props) {
     );
 }
 
-export default ShowMessageErr;
+export default React.memo(ShowMessageErr);

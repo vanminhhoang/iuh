@@ -11,6 +11,7 @@ import ShowMessageErr from './ShowMessageErr';
 import Authentication from './Authentication';
 import Password from './Password';
 import InfoUser from './InformationUser';
+import InputPass from './InputPassword';
 
 
 
@@ -18,10 +19,16 @@ import InfoUser from './InformationUser';
 
 function Header() {
 
+  const [firebasePhone, setFirebasePhone] = useState();
+
   const [valuePhone, setValuePhone] = useState("");
 
   const [valueMsgErr, setValueMsgErr] = useState("Số điện thoại không hợp lệ, vui lòng nhập lại một số điện thoại gồm 10 số!");
   
+  const [styleDisplayInputPass, setStyleDisplayInputPass] = useState({
+    display: "none"
+  });
+ 
   const [styleDisplayAuth, setStyleDisplayAuth] = useState({
     display: "none"
   });
@@ -58,8 +65,8 @@ function Header() {
   const logoutUser = () => {
     firebase.auth().signOut().then(function() {
       console.log("Đăng xuất thành công");
-      setStyleDisplayIconLogin({...styleDisplayIconLogin, display: "none"});
-      setStyleDisplayTextLogin({...styleDisplayTextLogin, display: "block"});
+      // setStyleDisplayIconLogin({...styleDisplayIconLogin, display: "none"});
+      // setStyleDisplayTextLogin({...styleDisplayTextLogin, display: "block"});
     }).catch(function(error) {
       console.log("Đăng xuất thất bại: " + error);
     });
@@ -111,26 +118,32 @@ function Header() {
         </nav>    
       </section>
     
-      <SearchHeader/>
+      {/* <SearchHeader/> */}
 
       <div style={styleDisplayBackgroundLogin} className="div-background">
         <Login styleLogin={styleDisplayLogin} setStyleLogin={setStyleDisplayLogin}
-            styleBGLogin={styleDisplayBackgroundLogin} setStyleBGLogin={setStyleDisplayBackgroundLogin}
-            styleSM={styleDisplayMessageErr}  setStyleSM={setStyleDisplayMessageErr}
-            setValueNum={setValuePhone}
-            styleAuth={styleDisplayAuth} setStyleAuth={setStyleDisplayAuth}/>
+          styleBGLogin={styleDisplayBackgroundLogin} setStyleBGLogin={setStyleDisplayBackgroundLogin}
+          styleSM={styleDisplayMessageErr}  setStyleSM={setStyleDisplayMessageErr}
+          setValueNum={setValuePhone} 
+          firebasePhone={firebasePhone} setFirebasePhone={setFirebasePhone}
+          styleAuth={styleDisplayAuth} setStyleAuth={setStyleDisplayAuth}/>
         <ShowMessageErr styleSME={styleDisplayMessageErr} setStyleSME={setStyleDisplayMessageErr}
           value={valueMsgErr}/>
         <Authentication valueNum={valuePhone}
           styleAuth={styleDisplayAuth} setStyleAuth={setStyleDisplayAuth}
           styleLogin={styleDisplayLogin} setStyleLogin={setStyleDisplayLogin}
-          stylePass={styleDisplayPassword} setStylePass={setStyleDisplayPassword}/>
+          stylePass={styleDisplayPassword} setStylePass={setStyleDisplayPassword}
+          firebasePhone={firebasePhone} setFirebasePhone={setFirebasePhone}/>
         <Password stylePass={styleDisplayPassword} setStylePass={setStyleDisplayPassword}
           styleSME={styleDisplayMessageErr} setStyleSME={setStyleDisplayMessageErr} setValueMsg={setValueMsgErr}
           styleInfo={styleDisplayInfoUser} setStyleInfo={setStyleDisplayInfoUser}/>
         <InfoUser valuePhone={valuePhone}
           styleInfo={styleDisplayInfoUser}
           style={styleDisplayBackgroundLogin} setStyleBGLogin={setStyleDisplayBackgroundLogin}/>
+        <InputPass styleInputPass={styleDisplayInputPass} setStyleInputPass={setStyleDisplayInputPass}
+          styleLogin={styleDisplayLogin} setStyleLogin={setStyleDisplayLogin}
+          styleAuth={styleDisplayAuth} setStyleAuth={setStyleDisplayAuth}
+          valueNum={valuePhone}/>
       </div>
 
 
@@ -138,4 +151,4 @@ function Header() {
     </header>  
   );
 }
-export default Header;
+export default React.memo(Header);

@@ -16,4 +16,4 @@ function SearchHeader() {
     );
 }
 
-export default SearchHeader;
+export default React.memo(SearchHeader);

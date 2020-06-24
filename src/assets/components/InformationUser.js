@@ -94,4 +94,4 @@ function InfoUser (props) {
     );
 }
 
-export default InfoUser;
+export default React.memo(InfoUser);
