@@ -27,20 +27,21 @@ function Auth (props) {
 
         console.log(VerifiCode);
 
-        // let firebaseAuth = props.firebasePhone;
+        let firebaseAuth = props.firebasePhone;
         
-        // firebaseAuth.then(function(confirmationResult){
-        //     console.log("xác nhận mã recaptcha");
+        firebaseAuth.then(function(confirmationResult){
+            console.log("xác nhận mã recaptcha");
         
-        //     confirmationResult.confirm(VerifiCode).then(function(result){
-        //         console.log("Đăng Nhập thành công");
-        //         console.log(result.user, "user");
-        //         console.log(result.user.phoneNumber + " number");
-        
-        //     }).catch((err) => {
-        //         console.log("SMS not sent: " + err);
-        //     })
-        // })
+            confirmationResult.confirm(VerifiCode).then(function(result){
+                console.log("Xác nhận mã code thành công");
+                console.log(result.user, "user");
+                console.log(result.user.phoneNumber + " number");
+                props.setStyleAuth({...props.styleAuth, display: "none"});
+                props.setStylePass({...props.stylePass, display: "flex"});
+            }).catch((err) => {
+                console.log("SMS not sent: " + err);
+            })
+        })
     }
 
       
@@ -55,8 +56,6 @@ function Auth (props) {
                 </div>
                 <button type="button" disabled={valueVerifiCode.length == 6 ? false : true} className="btn-submit" onClick={() => {
                     authCode(valueVerifiCode);
-                    props.setStyleAuth({...props.styleAuth, display: "none"});
-                    props.setStylePass({...props.stylePass, display: "flex"});
                 }}>Xác Nhận</button>
                 <div className="div-input-code">
                     <a href="#" className="count">Gửi lại mã</a> <span style={{fontSize: "17px"}}> {count != 0 ? count : ""} </span>

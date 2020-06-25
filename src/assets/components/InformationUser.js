@@ -27,6 +27,7 @@ function InfoUser (props) {
             Mssv: "",
             Gender: valueCheckedGender,
             Sdt: props.valuePhone,
+            pass: props.valuePassDK,
             TypeUser: "",
             Username: valueName,
             IdSchool:"",
@@ -47,12 +48,18 @@ function InfoUser (props) {
         .then(response => response.json())
         .then(result => {
             //Trả về object reponse true false
-            if (result.Status)
+            if (result.Status) {
                 console.log("Đăng kí thành công");
-            else console.log("Đăng kí thất bại");
+                props.setValueMsgErr("Đăng kí thành công");
+            } else {
+                console.log("Đăng kí thất bại");
+                props.setValueMsgErr("Đăng kí thất bại");
+            }
         })
         .catch(error => console.error("Error: ", error))
-        
+        props.setStyleInfoUser({...props.styleInfo, display: "none"})
+        props.setStyleBGLogin({...props.style, display: "flex"});
+        props.setStyleBGLogin({...props.styleBGLogin, display: "none"})
     }
     
 
@@ -87,7 +94,6 @@ function InfoUser (props) {
                 </div>
                 <button type="button" className="btn-next" disabled={valueName.length === 0 || valueCheckedGender.length === 0 || valueBirthday.length === 0 ? true : false} onClick={() => {
                     postAccount();
-                    props.setStyleBGLogin({...props.style, display: "none"});
                 }}>Tiếp tục</button>
             </div>
         </div>

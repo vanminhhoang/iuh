@@ -34,6 +34,8 @@ function Password (props) {
             return;
         }
 
+        props.setValuePassDK(valuePass);
+
         props.setStyleInfo({...props.styleInfo, display: "flex"});
         props.setStylePass({...props.stylePass, display: "none"});
     }

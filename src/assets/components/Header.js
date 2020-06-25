@@ -18,6 +18,7 @@ import InputPass from './InputPassword';
 
 
 function Header() {
+  const [valuePassDK, setValuePassDK] = useState("");
 
   const [firebasePhone, setFirebasePhone] = useState();
 
@@ -125,25 +126,31 @@ function Header() {
           styleBGLogin={styleDisplayBackgroundLogin} setStyleBGLogin={setStyleDisplayBackgroundLogin}
           styleSM={styleDisplayMessageErr}  setStyleSM={setStyleDisplayMessageErr}
           setValueNum={setValuePhone} 
-          firebasePhone={firebasePhone} setFirebasePhone={setFirebasePhone}
-          styleAuth={styleDisplayAuth} setStyleAuth={setStyleDisplayAuth}/>
+          setFirebasePhone={setFirebasePhone}
+          styleAuth={styleDisplayAuth} setStyleAuth={setStyleDisplayAuth}
+          styleInputPass={styleDisplayInputPass} setStyleInputPass={setStyleDisplayInputPass}/>
         <ShowMessageErr styleSME={styleDisplayMessageErr} setStyleSME={setStyleDisplayMessageErr}
           value={valueMsgErr}/>
         <Authentication valueNum={valuePhone}
           styleAuth={styleDisplayAuth} setStyleAuth={setStyleDisplayAuth}
           styleLogin={styleDisplayLogin} setStyleLogin={setStyleDisplayLogin}
           stylePass={styleDisplayPassword} setStylePass={setStyleDisplayPassword}
-          firebasePhone={firebasePhone} setFirebasePhone={setFirebasePhone}/>
+          styleBGLogin={styleDisplayBackgroundLogin} setStyleBGLogin={setStyleDisplayBackgroundLogin}
+          firebasePhone={firebasePhone}/>
         <Password stylePass={styleDisplayPassword} setStylePass={setStyleDisplayPassword}
           styleSME={styleDisplayMessageErr} setStyleSME={setStyleDisplayMessageErr} setValueMsg={setValueMsgErr}
-          styleInfo={styleDisplayInfoUser} setStyleInfo={setStyleDisplayInfoUser}/>
+          styleInfo={styleDisplayInfoUser} setStyleInfo={setStyleDisplayInfoUser}
+          setValuePassDK={setValuePassDK}/>
         <InfoUser valuePhone={valuePhone}
-          styleInfo={styleDisplayInfoUser}
+          valuePassDK={valuePassDK}
+          styleInfo={styleDisplayInfoUser} setStyleInfoUser={setStyleDisplayInfoUser}
+          setValueMsgErr={setValueMsgErr}
           style={styleDisplayBackgroundLogin} setStyleBGLogin={setStyleDisplayBackgroundLogin}/>
         <InputPass styleInputPass={styleDisplayInputPass} setStyleInputPass={setStyleDisplayInputPass}
           styleLogin={styleDisplayLogin} setStyleLogin={setStyleDisplayLogin}
           styleAuth={styleDisplayAuth} setStyleAuth={setStyleDisplayAuth}
-          valueNum={valuePhone}/>
+          valueNum={valuePhone}
+          setFirebasePhone={setFirebasePhone}/>
       </div>
 
 

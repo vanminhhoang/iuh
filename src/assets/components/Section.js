@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import ggplay from '../../img/ggplay.png';
 import appstrore from '../../img/appstrore.png';
 import '../css/SectionCss/Section.css'
@@ -12,17 +12,13 @@ import 'owl.carousel/dist/assets/owl.theme.default.min.css';
 function Section() {
     const [arrImgValue, setArrImgValue] = useState([]);    
 
-    const arrImg = () => {
+    useEffect(() => {
         if (window.fetch) {
             const urlAPI = "http://ec2-18-222-220-226.us-east-2.compute.amazonaws.com:3000/web/event";
-            
+            console.log ("Request method GET");
             fetch(urlAPI) 
                 .then(response => response.json())
                 .then(result => {
-                    // localStorage.setItem("image",JSON.stringify(result));
-                    // var img = localStorage.getItem("image");
-                    // img = JSON.parse(img);
-                    // img = img.data;
                     console.log(result.data);
                     if(arrImgValue.length < 1) {
                         setArrImgValue(result.data);
@@ -35,10 +31,10 @@ function Section() {
         } else {
             console.log("Fetch not found");
         }
-    }
+    }, [arrImgValue]);
 
-
-    arrImg();
+    
+    
     var listImg = [];
     for (var i = 0; i < arrImgValue.length; ++i) {
         listImg[i] = arrImgValue[i].image;
@@ -86,7 +82,8 @@ function Section() {
                     <div className="div-hollow">
                         <OwlCarousel className="owl-carousel owl-theme" items="1" autoplay={false} nav={true} dots={false} loop={false} margin={10}>
                             {listImg.map((value) => {
-                                return <div className="item" ><img src={value}/></div>
+                                console.log(value);
+                                return <div className="item"><img src={value}/></div>
                             })}
                         </OwlCarousel>
                     </div>
