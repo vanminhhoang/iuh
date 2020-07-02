@@ -9,6 +9,23 @@ div.login-container {
     background-color: white;
     position: relative;
 
+    svg.fa-spinner-third {
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        align-self: center;
+        z-index: 10;
+        display: block;
+    }
+
+    @keyframes anim-rotate-loading {
+        from {
+            transform: rotate(360deg);
+        } to {
+            transform: rotate(0);
+        }
+    }
+
     button.btn-close {
         border: none;
         position: absolute;

@@ -9,7 +9,22 @@ div.auth-container {
     position: relative;
     background-color: white;
 
-    
+    svg.fa-spinner-third {
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        align-self: center;
+        z-index: 10;
+        display: block;
+    }
+
+    @keyframes anim-rotate-loading {
+        from {
+            transform: rotate(360deg);
+        } to {
+            transform: rotate(0);
+        }
+    }
     
 
 

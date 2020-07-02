@@ -19,6 +19,10 @@ import InputPass from './InputPassword';
 
 function Header() {
 
+  const [checkAccountUserExist, setCheckAccountUserExist] = useState();
+
+  const [textCreatePassAgain, setTextCreatePassAgain] = useState("");
+
   const [count, setCount] = useState();
 
   const [valuePassDK, setValuePassDK] = useState("");
@@ -131,6 +135,7 @@ function Header() {
           setValueNum={setValuePhone} 
           setValueMsg={setValueMsgErr}
           setCount={setCount}
+          setCheckAccountUserExist={setCheckAccountUserExist}
           setFirebasePhone={setFirebasePhone}
           styleAuth={styleDisplayAuth} setStyleAuth={setStyleDisplayAuth}
           styleInputPass={styleDisplayInputPass} setStyleInputPass={setStyleDisplayInputPass}/>
@@ -142,11 +147,15 @@ function Header() {
           styleLogin={styleDisplayLogin} setStyleLogin={setStyleDisplayLogin}
           stylePass={styleDisplayPassword} setStylePass={setStyleDisplayPassword}
           styleBGLogin={styleDisplayBackgroundLogin} setStyleBGLogin={setStyleDisplayBackgroundLogin}
-          firebasePhone={firebasePhone}/>
+          firebasePhone={firebasePhone}
+          setTextCreatePassAgain={setTextCreatePassAgain}/>
         <Password stylePass={styleDisplayPassword} setStylePass={setStyleDisplayPassword}
           styleSME={styleDisplayMessageErr} setStyleSME={setStyleDisplayMessageErr} setValueMsg={setValueMsgErr}
           styleInfo={styleDisplayInfoUser} setStyleInfo={setStyleDisplayInfoUser}
-          setValuePassDK={setValuePassDK}/>
+          setValuePassDK={setValuePassDK}
+          valuePhone={valuePhone}
+          checkAccountUserExist={checkAccountUserExist}
+          textCreatePassAgain={textCreatePassAgain} setTextCreatePassAgain={setTextCreatePassAgain}/>
         <InfoUser valuePhone={valuePhone}
           valuePassDK={valuePassDK}
           styleInfo={styleDisplayInfoUser} setStyleInfoUser={setStyleDisplayInfoUser}

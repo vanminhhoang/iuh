@@ -80,7 +80,8 @@ function Section() {
                         <OwlCarousel className="owl-carousel owl-theme" items="1" autoplay={false} nav={true} dots={false} loop={false} margin={10}>
                             {listImg.map((value) => {
                                 console.log(value);
-                                return <div className="item"><img src={value}/></div>
+                                var s = value
+                                return <div className="item"><img src={s}/></div>;
                             })}
                         </OwlCarousel>
                     </div>
